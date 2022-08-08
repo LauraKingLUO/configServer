@@ -1,21 +1,3 @@
-server:
-  port: 9100
-spring:
-  application:
-    name: lagou-service-page
-  datasource:
-    url: jdbc:mysql:///springbootdata?characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: 123456
-eureka:
-  client:
-    serviceUrl: # eureka server的路径
-      defaultZone: http://localhost:9201/eureka/,http://localhost:9202/eureka/
-    instance:
-      #使用ip注册，否则会使用主机名注册了（此处考虑到对老版本的兼容，新版本经过实验都是ip）
-      prefer-ip-address: true
-      #自定义实例显示格式，加上版本号，便于多版本管理，注意是ip-address，早期版本是ipAddress
-      instance-id: ${spring.cloud.client.ipaddress}:${spring.application.name}:${server.port}:@project.version@
 mysql:
     user:  lh
     password: 123
